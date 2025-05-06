@@ -1,4 +1,4 @@
-package oop_baseball;
+package oop_baseball.version1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

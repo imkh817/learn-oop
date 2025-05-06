@@ -1,4 +1,4 @@
-package oop_baseball;
+package oop_baseball.version1;
 
 public class Judge {
 
