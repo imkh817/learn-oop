@@ -16,9 +16,9 @@ public class GameRunner {
 
     public GameRunner(OutputView outputView,InputView inputView ,Player player, Referee referee){
         this.outputView = outputView;
+        this.inputView = inputView;
         this.player = player;
         this.referee = referee;
-        this.inputView = inputView;
         this.answerGenerator = new AnswerGenerator();
     }
 
@@ -33,8 +33,9 @@ public class GameRunner {
 
             if(referee.judge(answer,playerAnswer)){
                 outputView.askReplay();
-                if(inputView.wantPlayAgain().equals("1")){
+                if("1".equals(inputView.wantPlayAgain())){
                     answer = answerGenerator.generateAnswer();
+                    System.out.println("answer = " + answer);
                 }else{
                     break;
                 }
@@ -46,5 +47,5 @@ public class GameRunner {
 
     // TODO: 게임을 더 진행할지 물어보고 입력하는 책임은 누구에게 주는것이 맞을까?
     // TODO: Player는 현재 정답을 입력하는 행위를 가지고 있다.
-    // TODO: 입력하는 행위로 보면 같지만, 정답을 입력하는 행위와 게임을 재시작/종료할지 여부를 입력하는 행위와는 성격이 다르다.
+    // TODO: 입력하는 행위로 보면 같지만, 정답을 입력하는 행위와 게임을 재시작/종료할지 여부를 입력하는 행위와는 성격이 다르다고 생각한다..
 }

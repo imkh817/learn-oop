@@ -29,9 +29,11 @@ public class ConsoleInputView implements InputView {
     @Override
     public String wantPlayAgain() {
         String playAgain = scanner.nextLine();
-        if(validator.playAgainValid(playAgain)){
+
+        if(!validator.playAgainValid(playAgain)){
             throw new IllegalArgumentException();
         }
+
         return playAgain;
     }
 }
