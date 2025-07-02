@@ -38,7 +38,7 @@ public class Library implements BookLender, BookLifecycleManager {
             return 1;
         }
 
-        return 0;
+        throw new IllegalArgumentException("해당하는 책은 현재 도서관에 비치되어있지 않습니다.");
     }
 
 
@@ -51,7 +51,7 @@ public class Library implements BookLender, BookLifecycleManager {
 
     private boolean isLoaned(Book book){
         Optional<Loan> loanByBook = loanRepository.getLoanByBook(book);
-        return loanByBook.isEmpty();
+        return !loanByBook.isEmpty();
     }
 
     public void printAllLoan(){
