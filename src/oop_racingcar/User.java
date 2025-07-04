@@ -8,20 +8,9 @@ public class User implements Player{
     Scanner scanner = new Scanner(System.in);
 
     @Override
-    public String[] decideName() {
+    public String[] decideCarName() {
         String input = scanner.nextLine();
-
-        String[] carNames = input.split(",");
-
-        Arrays.stream(carNames)
-                .filter(name ->  name.length() > 5)
-                .findFirst()
-                .ifPresent(name -> {
-                    throw new IllegalArgumentException("자동차의 이름은 5자리 이하로 정해주세요");
-                });
-
-        return carNames;
-
+        return input.split(",");
     }
 
     @Override

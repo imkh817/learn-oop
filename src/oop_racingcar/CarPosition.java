@@ -3,7 +3,7 @@ package oop_racingcar;
 public class CarPosition {
     private int postion = 0;
 
-    public void forward(){
+    public void toForward(){
         postion++;
     }
 

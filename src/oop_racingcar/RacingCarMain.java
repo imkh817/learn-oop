@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RacingCarMain {
     public static void main(String[] args) {
-        RacingCarGame game = new RacingCarGame(new User(), new DefaultCarFactory(), new Judge());
+        RacingCarGame game = new RacingCarGame(new User(), new DefaultCarFactory(new RandomGenerator()), new Judge());
         game.gameStart();
 
     }

@@ -16,7 +16,7 @@ public class RacingCarGame {
 
     public void gameStart(){
         System.out.println("n대의 자동차 이름을 정해주세요.");
-        String[] carName = user.decideName();
+        String[] carName = user.decideCarName(); // 차의 이름을 짓는다. decideCarName이 조금 더 나은 선택
         List<Car> cars = carFactory.create(carName);
 
         System.out.println("시도할 횟수를 입력해주세요");
@@ -30,7 +30,7 @@ public class RacingCarGame {
 
 
 
-    public List<Car> moveCar(List<Car> cars ,int attemptCount) {
+    private List<Car> moveCar(List<Car> cars ,int attemptCount) {
         for(int i=0; i<attemptCount; i++){
             for(Car car : cars){
                 car.move();
