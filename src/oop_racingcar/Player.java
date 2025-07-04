@@ -2,7 +2,7 @@ package oop_racingcar;
 
 public interface Player {
 
-    String[] decideName();
+    String[] decideCarName();
 
     int decideAttemptCount();
 
